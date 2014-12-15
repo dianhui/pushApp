@@ -19,6 +19,7 @@
 -(Msg *)queryMsg: (NSNumber *)msgId;
 -(void)insertOrReplaceMsg: (Msg *)msg;
 -(Boolean)deleteMsgById: (NSNumber *)msgId;
+-(Boolean)deleleMsgByType: (NSNumber *)type;
 -(NSMutableArray *)getMsgListByType:(NSNumber *) msgType;
 -(int)getTotalCountByType:(NSNumber *) msgType;
 -(int)getUnreadCountByType:(NSNumber *) msgType;

@@ -16,23 +16,37 @@
 - (IBAction)onConfirmClicked:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *screenTitle;
-@property (weak, nonatomic) IBOutlet UILabel *projectName;
-@property (weak, nonatomic) IBOutlet UILabel *companyNameTitle;
-@property (weak, nonatomic) IBOutlet UILabel *companyName;
-@property (weak, nonatomic) IBOutlet UILabel *projectPhaseTitle;
-@property (weak, nonatomic) IBOutlet UILabel *projectPhase;
-@property (weak, nonatomic) IBOutlet UILabel *fundSumTitle;
-@property (weak, nonatomic) IBOutlet UILabel *fundSum;
-@property (weak, nonatomic) IBOutlet UILabel *contactPersonTitle;
-@property (weak, nonatomic) IBOutlet UILabel *contactPerson;
-@property (weak, nonatomic) IBOutlet UILabel *contactPhoneTitle;
-@property (weak, nonatomic) IBOutlet UILabel *contactPhone;
-@property (weak, nonatomic) IBOutlet UILabel *dateTitle;
-@property (weak, nonatomic) IBOutlet UILabel *date;
-@property (weak, nonatomic) IBOutlet UILabel *bidSectionTitle;
-@property (weak, nonatomic) IBOutlet UILabel *bidSection;
+
+@property (weak, nonatomic) IBOutlet UILabel *msgTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *divider1;
+@property (weak, nonatomic) IBOutlet UILabel *title1;
+@property (weak, nonatomic) IBOutlet UILabel *name1;
+@property (weak, nonatomic) IBOutlet UIImageView *divider2;
+@property (weak, nonatomic) IBOutlet UILabel *title2;
+@property (weak, nonatomic) IBOutlet UILabel *name2;
+@property (weak, nonatomic) IBOutlet UIImageView *divider3;
+@property (weak, nonatomic) IBOutlet UILabel *title3;
+@property (weak, nonatomic) IBOutlet UILabel *name3;
+@property (weak, nonatomic) IBOutlet UIImageView *divider4;
+@property (weak, nonatomic) IBOutlet UILabel *title4;
+@property (weak, nonatomic) IBOutlet UILabel *name4;
+@property (weak, nonatomic) IBOutlet UIImageView *divider5;
+@property (weak, nonatomic) IBOutlet UILabel *title5;
+@property (weak, nonatomic) IBOutlet UILabel *name5;
+@property (weak, nonatomic) IBOutlet UIImageView *divider6;
+@property (weak, nonatomic) IBOutlet UILabel *title6;
+@property (weak, nonatomic) IBOutlet UILabel *name6;
+@property (weak, nonatomic) IBOutlet UIImageView *divider7;
+@property (weak, nonatomic) IBOutlet UILabel *title7;
+@property (weak, nonatomic) IBOutlet UILabel *name7;
+@property (weak, nonatomic) IBOutlet UIImageView *divider8;
+@property (weak, nonatomic) IBOutlet UILabel *title8;
+@property (weak, nonatomic) IBOutlet UILabel *name8;
+@property (weak, nonatomic) IBOutlet UIImageView *divider9;
+@property (weak, nonatomic) IBOutlet UILabel *title9;
+@property (weak, nonatomic) IBOutlet UILabel *name9;
+
 @property (weak, nonatomic) IBOutlet UIButton *confirm;
-@property (weak, nonatomic) IBOutlet UILabel *detailInfo;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progress;
 
 @property (strong, nonatomic) Msg *pushMsg;

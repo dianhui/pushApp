@@ -58,6 +58,12 @@
     [self.tableView reloadData];
 }
 
+-(void)showLoginView:(id)sender{
+    LoginViewController *login = (LoginViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    [self presentViewController:login animated:NO completion:nil];
+    login = nil;
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -76,6 +82,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MsgCell" forIndexPath:indexPath];
 
     Msg *msg = [msgList objectAtIndex:indexPath.row];
+    NSString *title = msg.msgContent;
+    if (title == nil || title.length < 1) {
+        NSNumber *num = [[NSNumber alloc] initWithInt:self.mMsgType];
+        title = [Util getTitleByMsgType: num];
+    }
     cell.textLabel.text = [NSString stringWithFormat:@"%d. %@", (indexPath.row + 1), msg.msgContent];
     if (msg.read == 1) {
         cell.textLabel.textColor = [UIColor grayColor];
@@ -85,15 +96,6 @@
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -108,21 +110,58 @@
     }
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+#pragma mark - UIPopoverListViewDataSource
+- (UITableViewCell *)popoverListView:(UIPopoverListView *)popoverListView
+                    cellForIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *identifier = @"cell";
+    UITableViewCell *cell = [[UITableViewCell alloc]
+                             initWithStyle:UITableViewCellStyleDefault
+                             reuseIdentifier:identifier];
+    
+    int row = indexPath.row;
+    if(row == 0){
+        cell.textLabel.text = @"退出";
+    }else if (row == 1){
+        cell.textLabel.text = @"清除通知";
+    }
+    
+    return cell;
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)popoverListView:(UIPopoverListView *)popoverListView
+       numberOfRowsInSection:(NSInteger)section
 {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    return 2;
 }
-*/
+
+#pragma mark - UIPopoverListViewDelegate
+- (void)popoverListView:(UIPopoverListView *)popoverListView
+     didSelectIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%s : %d", __func__, indexPath.row);
+    switch (indexPath.row) {
+        case 0:
+            [self performSelector:@selector(showLoginView:) withObject:self afterDelay:0.0];
+            // Clear user access token.
+            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kUserId];
+            break;
+        case 1:
+            [dbMgr deleleMsgByType:[[NSNumber alloc] initWithInt: self.mMsgType]];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kDbChangeNotify object:nil];
+            
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (CGFloat)popoverListView:(UIPopoverListView *)popoverListView
+   heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50.0f;
+}
 
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -137,4 +176,11 @@
     }
 }
 
+- (IBAction)onClickedMore:(id)sender {
+    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(160.f, 44.0f, 160, 120)];
+    poplistview.delegate = self;
+    poplistview.datasource = self;
+    poplistview.listView.scrollEnabled = FALSE;
+    [poplistview show];
+}
 @end

@@ -184,6 +184,34 @@
     return NO;
 }
 
+-(Boolean)deleleMsgByType: (NSNumber *)type {
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &pushMsgDb) != SQLITE_OK) {
+        NSLog(@"Failed to open database.");
+        return NO;
+    }
+    
+    sqlite3_stmt *statement;
+    NSString *sqlQuery = [NSString stringWithFormat:@"DELETE FROM MSG WHERE MSG_TYPE=%d", type.intValue];
+    NSLog(@"sqlQuery: %@", sqlQuery);
+    if (sqlite3_prepare_v2(pushMsgDb, [sqlQuery UTF8String], -1, &statement, nil) != SQLITE_OK) {
+        NSLog(@"Failed to delete from msg table.");
+        sqlite3_close(pushMsgDb);
+        return NO;
+    }
+    
+    int success = sqlite3_step(statement);
+    if (success == SQLITE_DONE) {
+        sqlite3_finalize(statement);
+        sqlite3_close(pushMsgDb);
+        return YES;
+    }
+    
+    sqlite3_close(pushMsgDb);
+    NSLog(@"Failed to delete from msg table.");
+    return NO;
+}
+
 -(NSMutableArray *)getMsgListByType:(NSNumber *) msgType {
     NSMutableArray *queryResult = [[NSMutableArray alloc] init];
     const char *dbpath = [databasePath UTF8String];
@@ -194,7 +222,6 @@
     
     sqlite3_stmt *statement;
     NSString *sqlQuery = [NSString stringWithFormat:@"SELECT MSG_ID, MSG_TYPE, MSG_CONTENT, READ from MSG where MSG_TYPE=%d", msgType.intValue];
-//    NSString *sqlQuery = [NSString stringWithFormat:@"SELECT MSG_ID, MSG_TYPE, MSG_CONTENT, READ from MSG"];
     if (sqlite3_prepare_v2(pushMsgDb, [sqlQuery UTF8String], -1, &statement, nil) != SQLITE_OK) {
         NSLog(@"No result for the query: %@", sqlQuery);
         sqlite3_close(pushMsgDb);

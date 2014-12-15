@@ -13,6 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MsgCell" textLabel="Rzn-yE-6nK" rowHeight="102" style="IBUITableViewCellStyleDefault" id="pVH-MC-aCp">
                                 <rect key="frame" x="0.0" y="86" width="320" height="56"/>
@@ -31,7 +32,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="LDm-7k-dBx" kind="push" identifier="showInviteScreen" id="dyq-N6-CKT"/>
+                                    <segue destination="Exs-KT-wc7" kind="push" identifier="showInviteScreen" id="dVd-EZ-BpY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -41,7 +42,14 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="招标邀请" id="N86-Vm-hiE"/>
+                    <navigationItem key="navigationItem" title="招标邀请" id="N86-Vm-hiE">
+                        <barButtonItem key="rightBarButtonItem" image="caidantubiao.png" id="01W-Ox-m9C">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="onClickedMore:" destination="Rga-fr-tFt" id="MRM-HB-f80"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="screenTitle" destination="N86-Vm-hiE" id="MJN-vi-wPY"/>
@@ -49,195 +57,239 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncH-GD-Kgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="668"/>
+            <point key="canvasLocation" x="647" y="638"/>
         </scene>
-        <!--招标邀请-->
-        <scene sceneID="2Z7-3B-MVv">
+        <!--招标邀请函-->
+        <scene sceneID="Cqj-M7-HD8">
             <objects>
-                <tableViewController id="LDm-7k-dBx" customClass="DetailTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Ytc-oh-ing">
+                <tableViewController id="Exs-KT-wc7" customClass="DetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hsA-Yq-ghi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="工程名称" id="4hJ-KF-HRF">
+                            <tableViewSection id="4St-8D-m8v">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="43" id="zf4-oO-lBj">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="43"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="524" id="xPa-8V-bGQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zf4-oO-lBj" id="Et2-sW-YPb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xPa-8V-bGQ" id="c7h-tw-uFK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="招标工程名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM9-32-isP">
-                                                    <rect key="frame" x="20" y="0.0" width="280" height="42"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="消息标题：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93l-aO-GRe">
+                                                    <rect key="frame" x="13" y="21" width="80" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="工程信息" id="yMu-Eg-8sg">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="307" id="mP3-Lg-qM8">
-                                        <rect key="frame" x="0.0" y="210" width="320" height="307"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mP3-Lg-qM8" id="VxQ-JI-C48">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="306"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMV-dR-pgj">
-                                                    <rect key="frame" x="70" y="0.0" width="230" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="公司：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YG-KZ-JKi">
-                                                    <rect key="frame" x="20" y="7" width="54" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw2-71-rV0">
-                                                    <rect key="frame" x="95" y="36" width="205" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="项目分期：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qza-kN-2xG">
-                                                    <rect key="frame" x="20" y="43" width="75" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuF-7V-lGW">
-                                                    <rect key="frame" x="95" y="72" width="205" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="保证金额：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Paa-9n-krC">
-                                                    <rect key="frame" x="20" y="79" width="75" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG3-at-dRo">
-                                                    <rect key="frame" x="95" y="108" width="205" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系人：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzD-Zx-ZSV">
-                                                    <rect key="frame" x="20" y="115" width="75" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyG-HY-ggv">
-                                                    <rect key="frame" x="95" y="144" width="205" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系电话：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9m-HU-CKA">
-                                                    <rect key="frame" x="20" y="151" width="75" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMB-4B-Ops">
-                                                    <rect key="frame" x="95" y="180" width="205" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="时间：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onv-mw-och">
-                                                    <rect key="frame" x="20" y="187" width="75" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypc-nL-zNJ">
-                                                    <rect key="frame" x="95" y="216" width="205" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="标段划分：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbg-Yl-TQp">
-                                                    <rect key="frame" x="20" y="223" width="75" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKt-MO-JhF">
-                                                    <rect key="frame" x="68" y="262" width="184" height="36"/>
-                                                    <state key="normal" title="确认招标">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="onConfirmClicked:" destination="LDm-7k-dBx" eventType="touchUpInside" id="tZe-jE-tmp"/>
-                                                    </connections>
-                                                </button>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JOu-2b-ACo">
-                                                    <rect key="frame" x="142" y="99" width="37" height="37"/>
-                                                </activityIndicatorView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="详细介绍" id="vsk-ir-hCx">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="177" id="roq-sb-1B6">
-                                        <rect key="frame" x="0.0" y="565" width="320" height="177"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="roq-sb-1B6" id="N3q-3o-zap">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="详细介绍" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="D8y-AL-Lyu">
-                                                    <rect key="frame" x="20" y="0.0" width="280" height="170"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnh-qj-Wlc">
+                                                    <rect key="frame" x="13" y="37" width="304" height="56"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="f59-eS-wvv">
+                                                    <rect key="frame" x="150" y="200" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="公司名称：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baf-hQ-RQh">
+                                                    <rect key="frame" x="13" y="111" width="80" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-menu-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="0QY-ZS-FZG">
+                                                    <rect key="frame" x="10" y="95" width="300" height="1"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-menu-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="eBX-Nn-Ueh">
+                                                    <rect key="frame" x="10" y="136" width="300" height="1"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5m-1h-P6c">
+                                                    <rect key="frame" x="107" y="111" width="203" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="项目分期：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFF-bu-utw">
+                                                    <rect key="frame" x="13" y="149" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-menu-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iw2-3b-Fyv">
+                                                    <rect key="frame" x="10" y="176" width="300" height="1"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Z9-Ib-gRX">
+                                                    <rect key="frame" x="107" y="149" width="203" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="招标工程名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp8-pA-HFq">
+                                                    <rect key="frame" x="13" y="192" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-menu-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="FYG-SE-vXZ">
+                                                    <rect key="frame" x="10" y="216" width="300" height="1"/>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNx-8j-Y0T">
+                                                    <rect key="frame" x="107" y="193" width="203" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="项目概况：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti7-hn-kVO">
+                                                    <rect key="frame" x="13" y="235" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-menu-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="11F-b9-YaX">
+                                                    <rect key="frame" x="10" y="259" width="300" height="1"/>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g67-iF-19a">
+                                                    <rect key="frame" x="107" y="236" width="203" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="标段划分：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFe-iu-K7z">
+                                                    <rect key="frame" x="13" y="276" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="投标保证金：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDE-Xh-Nab">
+                                                    <rect key="frame" x="13" y="316" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-menu-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="Flo-sz-Txt">
+                                                    <rect key="frame" x="10" y="339" width="300" height="1"/>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7P-5O-6fI">
+                                                    <rect key="frame" x="107" y="316" width="203" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-menu-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Cr-q6-8xW">
+                                                    <rect key="frame" x="10" y="299" width="300" height="1"/>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddh-Al-eMg">
+                                                    <rect key="frame" x="107" y="274" width="203" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系人：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gb-bZ-gEt">
+                                                    <rect key="frame" x="13" y="357" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-menu-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="H6O-jI-ZtC">
+                                                    <rect key="frame" x="10" y="378" width="300" height="1"/>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ave-Nj-RmI">
+                                                    <rect key="frame" x="107" y="357" width="203" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系人电话：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTK-gZ-TeZ">
+                                                    <rect key="frame" x="13" y="393" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-menu-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="rfH-Gv-ffI">
+                                                    <rect key="frame" x="10" y="416" width="300" height="1"/>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCN-Sm-IAK">
+                                                    <rect key="frame" x="107" y="393" width="203" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="发布日期：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrE-IU-agU">
+                                                    <rect key="frame" x="13" y="433" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIn-v4-L7p">
+                                                    <rect key="frame" x="107" y="433" width="203" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="LDm-7k-dBx" id="Rw3-e6-WNS"/>
-                            <outlet property="delegate" destination="LDm-7k-dBx" id="SeA-TT-9Kh"/>
+                            <outlet property="dataSource" destination="Exs-KT-wc7" id="auc-rE-NKo"/>
+                            <outlet property="delegate" destination="Exs-KT-wc7" id="GRO-eo-Q6Q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="招标邀请" id="J3B-I8-7ne">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="COK-Yj-SkO">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jzb-KZ-EyD">
+                    <navigationItem key="navigationItem" title="招标邀请函" id="MoG-Nq-GdN">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="znP-YF-hvG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ksv-CJ-rMc">
                                 <rect key="frame" x="-23" y="-15" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="接受">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onConfirmClicked:" destination="Exs-KT-wc7" eventType="touchUpInside" id="gai-sj-Kcf"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <keyCommands/>
                     <connections>
-                        <outlet property="bidSection" destination="Ypc-nL-zNJ" id="XWe-Cs-8fk"/>
-                        <outlet property="bidSectionTitle" destination="xbg-Yl-TQp" id="eca-Ly-Td8"/>
-                        <outlet property="companyName" destination="qMV-dR-pgj" id="qbA-mp-YuB"/>
-                        <outlet property="companyNameTitle" destination="6YG-KZ-JKi" id="ifP-x0-Nfc"/>
-                        <outlet property="confirm" destination="SKt-MO-JhF" id="Ukc-Vm-dsw"/>
-                        <outlet property="contactPerson" destination="dG3-at-dRo" id="4uu-cs-K7L"/>
-                        <outlet property="contactPersonTitle" destination="UzD-Zx-ZSV" id="EfI-hq-PYM"/>
-                        <outlet property="contactPhone" destination="dyG-HY-ggv" id="HvA-7D-Ycq"/>
-                        <outlet property="contactPhoneTitle" destination="g9m-HU-CKA" id="7SX-ih-y63"/>
-                        <outlet property="date" destination="mMB-4B-Ops" id="P6q-3D-lZl"/>
-                        <outlet property="dateTitle" destination="Onv-mw-och" id="ZMH-vx-Pod"/>
-                        <outlet property="detailInfo" destination="D8y-AL-Lyu" id="dA0-lm-bxx"/>
-                        <outlet property="fundSum" destination="GuF-7V-lGW" id="PIH-gN-D1a"/>
-                        <outlet property="fundSumTitle" destination="Paa-9n-krC" id="1VT-nn-PjX"/>
-                        <outlet property="progress" destination="JOu-2b-ACo" id="RF2-Oj-2tj"/>
-                        <outlet property="projectName" destination="TM9-32-isP" id="3vw-lG-yid"/>
-                        <outlet property="projectPhase" destination="Fw2-71-rV0" id="hta-wT-wUJ"/>
-                        <outlet property="projectPhaseTitle" destination="qza-kN-2xG" id="zRQ-bV-E8d"/>
-                        <outlet property="screenTitle" destination="J3B-I8-7ne" id="lsw-7J-f8T"/>
+                        <outlet property="confirm" destination="ksv-CJ-rMc" id="g9G-Ia-Ci9"/>
+                        <outlet property="divider1" destination="0QY-ZS-FZG" id="aNH-QO-iOp"/>
+                        <outlet property="divider2" destination="eBX-Nn-Ueh" id="yhi-GC-4KJ"/>
+                        <outlet property="divider3" destination="Iw2-3b-Fyv" id="goh-Nb-q1Q"/>
+                        <outlet property="divider4" destination="FYG-SE-vXZ" id="pi9-l4-Bc8"/>
+                        <outlet property="divider5" destination="11F-b9-YaX" id="V1E-BA-Jlh"/>
+                        <outlet property="divider6" destination="8Cr-q6-8xW" id="6R1-AF-3BS"/>
+                        <outlet property="divider7" destination="Flo-sz-Txt" id="tl6-VO-QiV"/>
+                        <outlet property="divider8" destination="H6O-jI-ZtC" id="MG8-ye-C2k"/>
+                        <outlet property="divider9" destination="rfH-Gv-ffI" id="hm1-th-onU"/>
+                        <outlet property="msgTitle" destination="Rnh-qj-Wlc" id="3oy-hv-PgI"/>
+                        <outlet property="name1" destination="U5m-1h-P6c" id="vYT-Mf-Qj8"/>
+                        <outlet property="name2" destination="4Z9-Ib-gRX" id="SNQ-nL-9hx"/>
+                        <outlet property="name3" destination="VNx-8j-Y0T" id="p5f-zT-rHC"/>
+                        <outlet property="name4" destination="g67-iF-19a" id="zHQ-D6-Fkm"/>
+                        <outlet property="name5" destination="ddh-Al-eMg" id="qrn-Qb-JmY"/>
+                        <outlet property="name6" destination="K7P-5O-6fI" id="bhj-f0-zQ6"/>
+                        <outlet property="name7" destination="ave-Nj-RmI" id="Bbb-u0-0vX"/>
+                        <outlet property="name8" destination="tCN-Sm-IAK" id="4mw-RS-MTY"/>
+                        <outlet property="name9" destination="PIn-v4-L7p" id="OfV-cx-F9A"/>
+                        <outlet property="progress" destination="f59-eS-wvv" id="3Pv-RC-G19"/>
+                        <outlet property="screenTitle" destination="MoG-Nq-GdN" id="1Ec-XZ-j9d"/>
+                        <outlet property="title1" destination="baf-hQ-RQh" id="FCq-vH-9gG"/>
+                        <outlet property="title2" destination="kFF-bu-utw" id="Umj-cA-qh5"/>
+                        <outlet property="title3" destination="Xp8-pA-HFq" id="zqL-om-nWF"/>
+                        <outlet property="title4" destination="Ti7-hn-kVO" id="agT-Zg-sEK"/>
+                        <outlet property="title5" destination="KFe-iu-K7z" id="DKJ-dJ-J47"/>
+                        <outlet property="title6" destination="RDE-Xh-Nab" id="GFt-Yr-IH2"/>
+                        <outlet property="title7" destination="5Gb-bZ-gEt" id="mkg-BC-p6P"/>
+                        <outlet property="title8" destination="rTK-gZ-TeZ" id="CAg-Ro-zs9"/>
+                        <outlet property="title9" destination="zrE-IU-agU" id="WEI-er-LWb"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o0y-bg-CUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XRx-dq-bT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="668"/>
+            <point key="canvasLocation" x="1015" y="638"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WIY-8J-WLN">
@@ -252,7 +304,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuE-VC-q9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-129" y="638"/>
+            <point key="canvasLocation" x="-95" y="638"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="2hT-M1-ZxJ">
@@ -335,7 +387,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="55O-9t-Bvc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="55O-9t-Bvc">
                                 <rect key="frame" x="0.0" y="19" width="330" height="49"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="帮助中心" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paZ-0f-r8w">
@@ -345,7 +397,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFs-kY-QA2">
-                                <rect key="frame" x="3" y="20" width="71" height="39"/>
+                                <rect key="frame" x="3" y="24" width="71" height="39"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="返回">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -387,7 +439,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="BaU-vh-awa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="BaU-vh-awa">
                                 <rect key="frame" x="-10" y="20" width="330" height="49"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="关于首创" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-ik-533">
@@ -397,7 +449,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfD-rP-Rmc">
-                                <rect key="frame" x="0.0" y="20" width="60" height="37"/>
+                                <rect key="frame" x="0.0" y="26" width="60" height="37"/>
                                 <state key="normal" title="返回">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -449,8 +501,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_top.png" id="pT0-Rf-ahW">
-                            <rect key="frame" x="0.0" y="64" width="320" height="73"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_bg.png" id="pT0-Rf-ahW">
+                            <rect key="frame" x="0.0" y="64" width="320" height="213"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <sections>
@@ -632,11 +684,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="caidantubiao.png" width="52" height="52"/>
+        <image name="caidantubiao.png" width="20" height="20"/>
+        <image name="img-menu-line.png" width="277" height="2"/>
         <image name="login_bottom.png" width="1660" height="600"/>
         <image name="login_top.png" width="720" height="150"/>
         <image name="logo.png" width="72" height="72"/>
+        <image name="main_bg.png" width="640" height="426"/>
         <image name="qitatongzhi.png" width="144" height="144"/>
+        <image name="title_bg.png" width="320" height="44"/>
         <image name="zhaobiaotongzhi.png" width="144" height="144"/>
         <image name="zhaobiaowenjuan.png" width="144" height="144"/>
         <image name="zhaobiaoyaoqinghan.png" width="144" height="144"/>

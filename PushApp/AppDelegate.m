@@ -59,7 +59,7 @@
 {
     
      [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
-     UIImage *navBar = [UIImage imageNamed:@"login_top.png"];
+     UIImage *navBar = [UIImage imageNamed:@"title_bg.png"];
      [[UINavigationBar appearance] setBackgroundImage:navBar forBarMetrics:UIBarMetricsDefault];
     
     if (launchOptions) { //launchOptions is not nil

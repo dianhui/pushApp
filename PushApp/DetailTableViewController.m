@@ -143,6 +143,11 @@
         recvProDetailData = nil;
         
         NSLog(@"connectionDidFinishLoading: %@",results);
+        if ([results length] < 8) {
+            [self.progress stopAnimating];
+            return;
+        }
+        
         NSData *jsonData = [results dataUsingEncoding:NSUTF8StringEncoding];
         NSError *err;
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&err];
@@ -188,85 +193,177 @@
         self.progress.hidden = YES;
         [self.progress stopAnimating];
         self.confirm.enabled = NO;
-        [self.confirm setTitle:@"感谢参与" forState:UIControlStateNormal];
+        [self.confirm setTitle:@"已接受" forState:UIControlStateNormal];
         [self.confirm setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [dbMgr setMsgConfirm:[[NSNumber alloc] initWithInt:self.pushMsg.msgId] confirm:[[NSNumber alloc] initWithInt:1]];
     }
 }
 
 -(void)onRetrieveMsg: (Msg *)msg {
-    
-//    if (msg.msgContent.length > 0) {
-//        self.screenTitle.title = msg.msgContent;
-//    }
-    
-    if (msg.msgType == 1) {
-        self.projectName.text = msg.attrVar3;
-        self.companyName.text = msg.attrVar1;
-        self.projectPhase.text = msg.attrVar2;
-        self.fundSum.text = msg.attrVar6;
-        self.contactPerson.text = msg.attrVar7;
-        self.contactPhone.text = msg.attrVar8;
+    if (msg.msgType == 1) {    //发标邀请函
+        self.confirm.hidden = NO;
+        self.msgTitle.text = msg.msgContent;
+
+        self.divider1.hidden = NO;
+        
+        self.title1.hidden = NO;
+        self.title1.text = @"公司名称：";
+        self.name1.hidden = NO;
+        self.name1.text = msg.attrVar1;
+        
+        self.divider2.hidden = NO;
+
+        self.title2.hidden = NO;
+        self.title2.text = @"项目分期：";
+        self.name2.hidden = NO;
+        self.name2.text = msg.attrVar2;
+        
+        self.divider3.hidden = NO;
+        
+        self.title3.hidden = NO;
+        self.title3.text = @"招标工程名：";
+        self.name3.hidden = NO;
+        self.name3.text = msg.attrVar3;
+
+        self.divider4.hidden = NO;
+        
+        self.title4.hidden = NO;
+        self.title4.text = @"项目概况：";
+        self.name4.hidden = NO;
+        self.name4.text = msg.attrLong1;
+        
+        self.divider5.hidden = NO;
+        
+        self.title5.hidden = NO;
+        self.title5.text = @"标段划分：";
+        self.name5.hidden = NO;
+        self.name5.text = msg.attrVar5;
+        
+        self.divider6.hidden = NO;
+        
+        self.title6.hidden = NO;
+        self.title6.text = @"投标保证金：";
+        self.name6.hidden = NO;
+        self.name6.text = msg.attrVar6;
+        
+        self.divider7.hidden = NO;
+        
+        self.title7.hidden = NO;
+        self.title7.text = @"联系人：";
+        self.name7.hidden = NO;
+        self.name7.text = msg.attrVar7;
+        
+        self.divider8.hidden = NO;
+        
+        self.title8.hidden = NO;
+        self.title8.text = @"联系人电话：";
+        self.name8.hidden = NO;
+        self.name8.text = msg.attrVar8;
+        
+        self.divider9.hidden = NO;
+        
+        self.title9.hidden = NO;
+        self.title9.text = @"发送日期：";
+        self.name9.hidden = NO;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *stringFromDate = [formatter stringFromDate:[[NSDate alloc] initWithTimeIntervalSince1970: [msg.attrDate1 longLongValue]/1000]];
-        self.date.text = stringFromDate;
-        self.bidSection.text = msg.attrVar5;
+        self.name9.text = stringFromDate;
+
         if (msg.confirm == 0) {
-            [self.confirm setTitle:@"确认招标" forState:UIControlStateNormal];
+            [self.confirm setTitle:@"接受" forState:UIControlStateNormal];
         } else {
             self.confirm.enabled = NO;
-            [self.confirm setTitle:@"感谢参与" forState:UIControlStateNormal];
+            [self.confirm setTitle:@"已接受" forState:UIControlStateNormal];
             [self.confirm setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         }
         
-        self.detailInfo.text = msg.attrLong1;
+        return;
+    }
+    
+    if (self.pushMsg.msgType == 2 ||
+        self.pushMsg.msgType == 3 ||
+        self.pushMsg.msgType == 4) {    //发标通知, 投标问卷，中标通知
+        
+        self.confirm.hidden = YES;
+        self.msgTitle.text = msg.msgContent;
+        
+        self.divider1.hidden = NO;
+        
+        self.title1.hidden = NO;
+        self.title1.text = @"招标编号：";
+        self.name1.hidden = NO;
+        self.name1.text = msg.attrVar1;
+        
+        self.divider2.hidden = NO;
+        
+        self.title2.hidden = NO;
+        self.title2.text = @"公司名称：";
+        self.name2.hidden = NO;
+        self.name2.text = msg.attrVar2;
+        
+        self.divider3.hidden = NO;
+        
+        self.title3.hidden = NO;
+        self.title3.text = @"项目分期：";
+        self.name3.hidden = NO;
+        self.name3.text = msg.attrVar3;
+        
+        self.divider4.hidden = NO;
+        
+        self.title4.hidden = NO;
+        self.title4.text = @"招标工程名：";
+        self.name4.hidden = NO;
+        self.name4.text = msg.attrVar4;
+        
+        self.divider5.hidden = NO;
+        
+        self.title5.hidden = NO;
+        self.title5.text = @"招标范围：";
+        self.name5.hidden = NO;
+        self.name5.text = msg.attrLong1;
+        
+        self.divider6.hidden = NO;
+        
+        self.title6.hidden = NO;
+        self.title6.text = @"联系人：";
+        self.name6.hidden = NO;
+        self.name6.text = msg.attrVar5;
+        
+        self.divider7.hidden = NO;
+        
+        self.title7.hidden = NO;
+        self.title7.text = @"发送日期：";
+        self.name7.hidden = NO;
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSString *stringFromDate = [formatter stringFromDate:[[NSDate alloc] initWithTimeIntervalSince1970: [msg.attrDate1 longLongValue]/1000]];
+        self.name7.text = stringFromDate;
         
         return;
     }
     
     if (self.pushMsg.msgType == 9) {
+        self.confirm.hidden = YES;
+        self.msgTitle.text = msg.msgContent;
+        
+        self.title1.hidden = NO;
+        self.title1.text = @"通知正文：";
+        self.name1.hidden = NO;
+        self.name1.text = msg.attrLong1;
+        
+        self.divider1.hidden = NO;
+        
+        self.title2.hidden = NO;
+        self.title2.text = @"发送日期：";
+        self.name2.hidden = NO;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *stringFromDate = [formatter stringFromDate:[[NSDate alloc] initWithTimeIntervalSince1970: [msg.attrDate1 longLongValue]/1000]];
-        self.companyNameTitle.text = @"时间：";
-        self.companyName.text = stringFromDate;
-        self.detailInfo.text = msg.attrLong1;
-        
-        self.projectName.hidden = YES;
-        self.companyName.hidden = YES;
-        self.projectPhaseTitle.hidden = YES;
-        self.projectPhase.hidden = YES;
-        self.fundSumTitle.hidden = YES;
-        self.fundSum.hidden = YES;
-        self.contactPersonTitle.hidden = YES;
-        self.contactPerson.hidden = YES;
-        self.contactPhoneTitle.hidden = YES;
-        self.contactPhone.hidden = YES;
-        self.bidSectionTitle.hidden = YES;
-        self.bidSection.hidden = YES;
-        self.confirm.hidden = YES;
-        self.dateTitle.hidden = YES;
-        self.date.hidden = YES;
+        self.name2.text = stringFromDate;
         
         return;
     }
-    
-    self.projectName.text = msg.attrVar4;
-    self.companyName.text = msg.attrVar2;
-    self.projectPhase.text = msg.attrVar3;
-    self.fundSumTitle.text = @"编号：";
-    self.fundSum.text = msg.attrVar1;
-    self.contactPerson.text = msg.attrVar5;
-    self.contactPhone.text = msg.attrVar6;
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *stringFromDate = [formatter stringFromDate:[[NSDate alloc] initWithTimeIntervalSince1970: [msg.attrDate1 longLongValue]/1000]];
-    self.date.text = stringFromDate;
-    self.bidSectionTitle.hidden = YES;
-    self.bidSection.hidden = YES;
-    self.confirm.hidden = YES;
-    self.detailInfo.text = msg.attrLong1;
 }
 
 - (void)didReceiveMemoryWarning
@@ -278,140 +375,5 @@
 - (IBAction)onConfirmClicked:(id)sender {
     [self syncAttendStatus];
 }
-
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString *name;
-    switch (section) {
-        case 0:
-            if (self.pushMsg.msgType == 9) {
-                name = @"";
-            } else {
-                name = @"工程名称";
-            }
-            break;
-        case 1:
-            if (self.pushMsg.msgType == 9) {
-                name = @"";
-            } else {
-                name = @"工程信息";
-            }
-            break;
-        case 2:
-            if (self.pushMsg.msgType == 1) {
-                name = @"详细介绍";
-            } else if(self.pushMsg.msgType == 9){
-                name = @"通知正文";
-            } else {
-                name = @"招标范围";
-            }
-            break;
-            
-    }
-    return name;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat height = 100.0;
-    switch (indexPath.section) {
-        case 0:
-            if (self.pushMsg.msgType == 9) {
-                height = 0.0;
-            } else {
-                height = 43.0;
-            }
-            break;
-        case 1:
-            if (self.pushMsg.msgType == 1) {
-                height = 307.0;
-            } else if(self.pushMsg.msgType == 9) {
-                height = 36.0;
-            } else {
-                height = 220.0;
-            }
-            break;
-        case 2:
-            height = 177.0;
-            break;
-            
-    }
-    return height;
-}
-
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

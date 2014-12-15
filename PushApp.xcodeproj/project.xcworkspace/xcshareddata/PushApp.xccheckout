@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0C6D2ABC-999E-4842-B4A2-931812349399</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PushApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E7F1C4B77077D29F192815F36CF3AAA7F5DD40E9</key>
+		<string>github.com:dianhui/pushApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PushApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E7F1C4B77077D29F192815F36CF3AAA7F5DD40E9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:dianhui/pushApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E7F1C4B77077D29F192815F36CF3AAA7F5DD40E9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E7F1C4B77077D29F192815F36CF3AAA7F5DD40E9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PushApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

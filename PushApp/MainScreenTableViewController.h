@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "DatabaseMgr.h"
+#import "UIPopoverListView.h"
 
-@interface MainScreenTableViewController : UITableViewController {
+@interface MainScreenTableViewController : UITableViewController <UIPopoverListViewDataSource, UIPopoverListViewDelegate> {
     DatabaseMgr *dbMgr;
     NSMutableArray *msgList;
 }
 
+- (IBAction)onClickedMore:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *screenTitle;
 @property (assign, nonatomic) int mMsgType;
