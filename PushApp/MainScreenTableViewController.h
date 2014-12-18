@@ -16,6 +16,8 @@
 }
 
 - (IBAction)onClickedMore:(id)sender;
+- (IBAction)onBackClicked:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *screenTitle;
 @property (assign, nonatomic) int mMsgType;

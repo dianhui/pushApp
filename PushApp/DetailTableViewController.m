@@ -376,4 +376,8 @@
     [self syncAttendStatus];
 }
 
+- (IBAction)onBackClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

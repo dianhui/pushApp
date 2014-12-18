@@ -14,6 +14,7 @@
     DatabaseMgr *dbMgr;
 }
 - (IBAction)onConfirmClicked:(id)sender;
+- (IBAction)onBackClicked:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *screenTitle;
 

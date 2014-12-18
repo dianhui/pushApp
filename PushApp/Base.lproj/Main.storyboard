@@ -43,6 +43,12 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="招标邀请" id="N86-Vm-hiE">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="VIC-EZ-aro">
+                            <color key="tintColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="onBackClicked:" destination="Rga-fr-tFt" id="SqX-uI-DOj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="caidantubiao.png" id="01W-Ox-m9C">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -239,6 +245,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="招标邀请函" id="MoG-Nq-GdN">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="s7b-px-Y3j">
+                            <color key="tintColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="onBackClicked:" destination="Exs-KT-wc7" id="mi2-ig-YTP"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="znP-YF-hvG">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ksv-CJ-rMc">
                                 <rect key="frame" x="-23" y="-15" width="71" height="30"/>
@@ -502,7 +514,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_bg.png" id="pT0-Rf-ahW">
-                            <rect key="frame" x="0.0" y="64" width="320" height="213"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <sections>
@@ -684,12 +696,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="caidantubiao.png" width="20" height="20"/>
+        <image name="caidantubiao.png" width="40" height="40"/>
         <image name="img-menu-line.png" width="277" height="2"/>
         <image name="login_bottom.png" width="1660" height="600"/>
         <image name="login_top.png" width="720" height="150"/>
         <image name="logo.png" width="72" height="72"/>
-        <image name="main_bg.png" width="640" height="426"/>
+        <image name="main_bg.png" width="640" height="200"/>
         <image name="qitatongzhi.png" width="144" height="144"/>
         <image name="title_bg.png" width="320" height="44"/>
         <image name="zhaobiaotongzhi.png" width="144" height="144"/>

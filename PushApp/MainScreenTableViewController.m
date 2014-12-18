@@ -183,4 +183,9 @@
     poplistview.listView.scrollEnabled = FALSE;
     [poplistview show];
 }
+
+- (IBAction)onBackClicked:(id)sender {
+    NSLog(@"onBackClicked ...");
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end
