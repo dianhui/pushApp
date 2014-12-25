@@ -142,8 +142,6 @@
 
     NSString *insertSQL = [NSString stringWithFormat:@"INSERT OR REPLACE INTO MSG(MSG_ID, MSG_TYPE, MSG_CONTENT, ATTRIBUTE_VAR1, ATTRIBUTE_VAR2, ATTRIBUTE_VAR3, ATTRIBUTE_VAR4, ATTRIBUTE_VAR5, ATTRIBUTE_VAR6, ATTRIBUTE_VAR7, ATTRIBUTE_VAR8, ATTRIBUTE_LONG1, ATTRIBUTE_DATE1, READ, CONFIRM) VALUES(%d, %d, \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", %d, %d)", msg.msgId, msg.msgType, msg.msgContent, msg.attrVar1, msg.attrVar2, msg.attrVar3, msg.attrVar4, msg.attrVar5, msg.attrVar6, msg.attrVar7, msg.attrVar8, msg.attrLong1, msg.attrDate1, msg.read, msg.confirm];
     
-    NSLog(@"insert: %@", insertSQL);
-    
     const char *insert_stmt = [insertSQL UTF8String];
     sqlite3_prepare_v2(pushMsgDb, insert_stmt, -1, &statement, NULL);
     int result = sqlite3_step(statement);
@@ -193,7 +191,6 @@
     
     sqlite3_stmt *statement;
     NSString *sqlQuery = [NSString stringWithFormat:@"DELETE FROM MSG WHERE MSG_TYPE=%d", type.intValue];
-    NSLog(@"sqlQuery: %@", sqlQuery);
     if (sqlite3_prepare_v2(pushMsgDb, [sqlQuery UTF8String], -1, &statement, nil) != SQLITE_OK) {
         NSLog(@"Failed to delete from msg table.");
         sqlite3_close(pushMsgDb);
@@ -259,7 +256,6 @@
     
     sqlite3_stmt *statement;
     NSString *sqlQuery = [NSString stringWithFormat:@"UPDATE MSG set READ=%d WHERE MSG_ID=%d", readValue.intValue, msgId.intValue];
-    NSLog(@"sqlQuery: %@", sqlQuery);
     if (sqlite3_prepare_v2(pushMsgDb, [sqlQuery UTF8String], -1, &statement, nil) != SQLITE_OK) {
         NSLog(@"Failed to update msg table.");
         sqlite3_close(pushMsgDb);
@@ -288,7 +284,6 @@
     
     sqlite3_stmt *statement;
     NSString *sqlQuery = [NSString stringWithFormat:@"UPDATE MSG set CONFIRM=%d WHERE MSG_ID=%d", confirmValue.intValue, msgId.intValue];
-    NSLog(@"sqlQuery: %@", sqlQuery);
     if (sqlite3_prepare_v2(pushMsgDb, [sqlQuery UTF8String], -1, &statement, nil) != SQLITE_OK) {
         NSLog(@"Failed to update msg table.");
         sqlite3_close(pushMsgDb);
@@ -317,7 +312,6 @@
     
     sqlite3_stmt *statement;
     NSString *sqlQuery = [NSString stringWithFormat:@"SELECT COUNT(*) from MSG WHERE MSG_TYPE=%d", msgType.intValue];
-    NSLog(@"sqlQuery: %@", sqlQuery);
     if (sqlite3_prepare_v2(pushMsgDb, [sqlQuery UTF8String], -1, &statement, nil) != SQLITE_OK) {
         NSLog(@"Failed to select COUNT(*), error: %s", sqlite3_errmsg(pushMsgDb));
         sqlite3_close(pushMsgDb);
@@ -345,7 +339,6 @@
     
     sqlite3_stmt *statement;
     NSString *sqlQuery = [NSString stringWithFormat:@"SELECT COUNT(*) from MSG WHERE (MSG_TYPE=%d AND READ=0)", msgType.intValue];
-    NSLog(@"sqlQuery: %@", sqlQuery);
     if (sqlite3_prepare_v2(pushMsgDb, [sqlQuery UTF8String], -1, &statement, nil) != SQLITE_OK) {
         NSLog(@"Failed to select COUNT(*), error: %s", sqlite3_errmsg(pushMsgDb));
         sqlite3_close(pushMsgDb);

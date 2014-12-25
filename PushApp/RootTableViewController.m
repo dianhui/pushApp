@@ -39,11 +39,9 @@
     self.navigationController.title = @"首创招标客户端";
     
     NSString *userId = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:kUserId];
-    NSLog(@"userId: %@", userId);
     if (userId == nil) {
         [self performSelector:@selector(showLoginView:) withObject:self afterDelay:0.0];
     } else {
-        NSLog(@"XGPush account: %@", userId);
         [XGPush setAccount:userId];
         [Util registerDevice];
     }
@@ -251,7 +249,6 @@
 - (void)popoverListView:(UIPopoverListView *)popoverListView
      didSelectIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%s : %d", __func__, indexPath.row);
     switch (indexPath.row) {
         case 0:
             [self performSelector:@selector(showLoginView:) withObject:self afterDelay:0.0];

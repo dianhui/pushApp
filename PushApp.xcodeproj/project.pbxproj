@@ -555,7 +555,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6db47853-2ce7-4a99-9519-0d82c6188327";
+				PROVISIONING_PROFILE = "2cf28acc-5811-4ac9-a8a4-937d3d17e12e";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -575,7 +575,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6db47853-2ce7-4a99-9519-0d82c6188327";
+				PROVISIONING_PROFILE = "2cf28acc-5811-4ac9-a8a4-937d3d17e12e";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

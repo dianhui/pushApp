@@ -152,11 +152,9 @@
     [self handleRemoteNotification:userInfo];
     
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-    NSLog(@"didReceiveRemoteNotification userInfo: %@", userInfo);
 }
 
 - (void)handleRemoteNotification:(NSDictionary *)userInfo {
-    NSLog(@"userinfo: %@", userInfo);
     NSString *msgId = [userInfo objectForKey:@"msgId"];
     NSString *msgType = [userInfo objectForKey:@"type"];
     NSString *content = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];

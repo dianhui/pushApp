@@ -63,7 +63,6 @@
     [self.progress startAnimating];
     NSMutableURLRequest  *request = [[NSMutableURLRequest alloc] init];
     NSString *url = [[NSString alloc] initWithFormat:@"%@:%@/%@?%@=%@&%@=%@", kBaseUrl, kPort, kLoginPath, @"name", userName, @"password", password];
-    NSLog(@"login url: %@", url);
     [request setURL:[NSURL URLWithString: url]];
     [request setTimeoutInterval:5.0];
     
@@ -95,7 +94,6 @@
 // 接收数据
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    NSLog(@"get some data");
     [receivedData appendData:data];
 }
 
@@ -109,8 +107,6 @@
     receivedData = nil;
     self.progress.hidden = YES;
     [self.progress stopAnimating];
-    
-    NSLog(@"connectionDidFinishLoading: %@",results);
     
     NSData *jsonData = [results dataUsingEncoding:NSUTF8StringEncoding];
     NSError *err;
@@ -132,7 +128,6 @@
     // Save user access token.
     [[NSUserDefaults standardUserDefaults] setObject: userId forKey:kUserId];
     NSString *account = [[NSString alloc] initWithFormat:@"%d", userId.intValue];
-    NSLog(@"XGPush account: %@", account);
     [XGPush setAccount: account];
     [Util registerDevice];
     

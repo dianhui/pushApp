@@ -62,7 +62,6 @@
     NSMutableURLRequest  *request = [[NSMutableURLRequest alloc] init];
     NSString *userId = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:kUserId];
     NSString *url = [[NSString alloc] initWithFormat:@"%@:%@/%@/%d?%@=%@", kBaseUrl, kPort, kMessagePath, self.pushMsg.msgId, @"user_id", userId];
-    NSLog(@"url: %@", url);
     [request setURL:[NSURL URLWithString: url]];
     [request setTimeoutInterval:5.0];
     
@@ -81,7 +80,6 @@
     NSMutableURLRequest  *request = [[NSMutableURLRequest alloc] init];
     NSString *userId = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:kUserId];
     NSString *url = [[NSString alloc] initWithFormat:@"%@:%@/%@/%d?%@=%@&%@=%@", kBaseUrl, kPort, kMessagePath, self.pushMsg.msgId, @"user_id", userId, @"type", @"read"];
-    NSLog(@"url: %@", url);
     [request setURL:[NSURL URLWithString: url]];
     [request setTimeoutInterval:5.0];
     
@@ -99,7 +97,6 @@
     NSMutableURLRequest  *request = [[NSMutableURLRequest alloc] init];
     NSString *userId = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:kUserId];
     NSString *url = [[NSString alloc] initWithFormat:@"%@:%@/%@/%d?%@=%@&%@=%@", kBaseUrl, kPort, kMessagePath, self.pushMsg.msgId, @"user_id", userId, @"type", @"accept"];
-    NSLog(@"url: %@", url);
     [request setURL:[NSURL URLWithString: url]];
     [request setTimeoutInterval:5.0];
     
@@ -142,7 +139,6 @@
                              encoding:NSUTF8StringEncoding];
         recvProDetailData = nil;
         
-        NSLog(@"connectionDidFinishLoading: %@",results);
         if ([results length] < 8) {
             [self.progress stopAnimating];
             return;
