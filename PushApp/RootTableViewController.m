@@ -37,6 +37,7 @@
     [super viewDidLoad];
     
     self.navigationController.title = @"首创招标客户端";
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     
     NSString *userId = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:kUserId];
     if (userId == nil) {

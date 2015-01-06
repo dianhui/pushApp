@@ -34,6 +34,7 @@
     self.progress.hidden = YES;
     NSNumber *num = [[NSNumber alloc] initWithInt:self.pushMsg.msgType];
     self.screenTitle.title = [Util getTitleByMsgType: num];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     
     if (dbMgr == nil) {
         dbMgr = [[DatabaseMgr alloc] init];

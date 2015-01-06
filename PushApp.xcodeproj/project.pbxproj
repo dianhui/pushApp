@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE2B18FE1A3EB43C0019BE1D /* icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2B18FD1A3EB43C0019BE1D /* icon_120x120.png */; };
-		DE2B19001A3EB4CF0019BE1D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2B18FF1A3EB4CF0019BE1D /* icon@2x.png */; };
-		DE2B19021A3EB5180019BE1D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2B19011A3EB5180019BE1D /* icon.png */; };
 		DE2B19041A3EBB790019BE1D /* title_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2B19031A3EBB790019BE1D /* title_bg.png */; };
 		DE3BA23C1A4325E200678EE6 /* caidantubiao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3BA23B1A4325E200678EE6 /* caidantubiao@2x.png */; };
+		DE427BBA1A5C36E100595751 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = DE427BB91A5C36E100595751 /* about.png */; };
 		DE4355DC1A14E8D5004B1F82 /* img-menu-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4355DB1A14E8D5004B1F82 /* img-menu-line@2x.png */; };
+		DE7ED6E31A4D140A0028B10D /* main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7ED6E21A4D140A0028B10D /* main_bg.png */; };
 		DEA485121A13024B00D71E47 /* MainScreenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA485111A13024B00D71E47 /* MainScreenTableViewController.m */; };
 		DEA485181A13391D00D71E47 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA485171A13391D00D71E47 /* LoginViewController.m */; };
 		DEA485221A13790600D71E47 /* libXG-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA485211A13790600D71E47 /* libXG-SDK.a */; };
@@ -21,7 +20,6 @@
 		DEA4852A1A1379A400D71E47 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA485291A1379A400D71E47 /* SystemConfiguration.framework */; };
 		DEA4852C1A1379AD00D71E47 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA4852B1A1379AD00D71E47 /* CoreTelephony.framework */; };
 		DEA4852E1A1379C900D71E47 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA4852D1A1379C900D71E47 /* libsqlite3.dylib */; };
-		DEAEAF711A3819EB005EBEC6 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAEAF701A3819EB005EBEC6 /* logo.png */; };
 		DEAEAF731A381A7E005EBEC6 /* login_top.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAEAF721A381A7E005EBEC6 /* login_top.png */; };
 		DEAEAF751A383626005EBEC6 /* login_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAEAF741A383626005EBEC6 /* login_bottom.png */; };
 		DEAEAF771A384590005EBEC6 /* zhaobiaoyaoqinghan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAEAF761A384590005EBEC6 /* zhaobiaoyaoqinghan.png */; };
@@ -29,8 +27,6 @@
 		DEAEAF7B1A3846DE005EBEC6 /* zhaobiaowenjuan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAEAF7A1A3846DE005EBEC6 /* zhaobiaowenjuan.png */; };
 		DEAEAF7D1A384757005EBEC6 /* zhongbiaotongzhi.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAEAF7C1A384757005EBEC6 /* zhongbiaotongzhi.png */; };
 		DEAEAF7F1A3847A8005EBEC6 /* qitatongzhi.png in Resources */ = {isa = PBXBuildFile; fileRef = DEAEAF7E1A3847A8005EBEC6 /* qitatongzhi.png */; };
-		DEB4F5771A43006D00DF787A /* main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DEB4F5761A43006D00DF787A /* main_bg.png */; };
-		DEBC2C561A3893CD002D969C /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = DEBC2C551A3893CD002D969C /* about.png */; };
 		DEBC2C5C1A389FCB002D969C /* UIPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2C5B1A389FCB002D969C /* UIPopoverListView.m */; };
 		DEBC2C621A38AFFE002D969C /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2C611A38AFFE002D969C /* HelpViewController.m */; };
 		DEBC2C651A38B91A002D969C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2C641A38B91A002D969C /* AboutViewController.m */; };
@@ -65,12 +61,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE2B18FD1A3EB43C0019BE1D /* icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120x120.png; sourceTree = "<group>"; };
-		DE2B18FF1A3EB4CF0019BE1D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		DE2B19011A3EB5180019BE1D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		DE2B19031A3EBB790019BE1D /* title_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_bg.png; sourceTree = "<group>"; };
 		DE3BA23B1A4325E200678EE6 /* caidantubiao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caidantubiao@2x.png"; sourceTree = "<group>"; };
+		DE427BB91A5C36E100595751 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		DE4355DB1A14E8D5004B1F82 /* img-menu-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "img-menu-line@2x.png"; path = "../../Media_Transfer/iOS/trunk/MediaTransfer/MediaTransfer/Resources/Images/img-menu-line@2x.png"; sourceTree = "<group>"; };
+		DE7ED6E21A4D140A0028B10D /* main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg.png; sourceTree = "<group>"; };
 		DEA485101A13024B00D71E47 /* MainScreenTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenTableViewController.h; sourceTree = "<group>"; };
 		DEA485111A13024B00D71E47 /* MainScreenTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenTableViewController.m; sourceTree = "<group>"; };
 		DEA485161A13391D00D71E47 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
@@ -84,7 +79,6 @@
 		DEA485291A1379A400D71E47 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DEA4852B1A1379AD00D71E47 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		DEA4852D1A1379C900D71E47 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		DEAEAF701A3819EB005EBEC6 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		DEAEAF721A381A7E005EBEC6 /* login_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_top.png; sourceTree = "<group>"; };
 		DEAEAF741A383626005EBEC6 /* login_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bottom.png; sourceTree = "<group>"; };
 		DEAEAF761A384590005EBEC6 /* zhaobiaoyaoqinghan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhaobiaoyaoqinghan.png; sourceTree = "<group>"; };
@@ -92,8 +86,6 @@
 		DEAEAF7A1A3846DE005EBEC6 /* zhaobiaowenjuan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhaobiaowenjuan.png; sourceTree = "<group>"; };
 		DEAEAF7C1A384757005EBEC6 /* zhongbiaotongzhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhongbiaotongzhi.png; sourceTree = "<group>"; };
 		DEAEAF7E1A3847A8005EBEC6 /* qitatongzhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qitatongzhi.png; sourceTree = "<group>"; };
-		DEB4F5761A43006D00DF787A /* main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg.png; sourceTree = "<group>"; };
-		DEBC2C551A3893CD002D969C /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		DEBC2C5A1A389FCB002D969C /* UIPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPopoverListView.h; sourceTree = "<group>"; };
 		DEBC2C5B1A389FCB002D969C /* UIPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPopoverListView.m; sourceTree = "<group>"; };
 		DEBC2C601A38AFFE002D969C /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
@@ -162,8 +154,8 @@
 		DE4355D81A14E88F004B1F82 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DEBC2C551A3893CD002D969C /* about.png */,
-				DEB4F5761A43006D00DF787A /* main_bg.png */,
+				DE427BB91A5C36E100595751 /* about.png */,
+				DE7ED6E21A4D140A0028B10D /* main_bg.png */,
 				DE3BA23B1A4325E200678EE6 /* caidantubiao@2x.png */,
 				DE2B19031A3EBB790019BE1D /* title_bg.png */,
 				DEAEAF7E1A3847A8005EBEC6 /* qitatongzhi.png */,
@@ -173,10 +165,6 @@
 				DEAEAF761A384590005EBEC6 /* zhaobiaoyaoqinghan.png */,
 				DEAEAF741A383626005EBEC6 /* login_bottom.png */,
 				DEAEAF721A381A7E005EBEC6 /* login_top.png */,
-				DEAEAF701A3819EB005EBEC6 /* logo.png */,
-				DE2B19011A3EB5180019BE1D /* icon.png */,
-				DE2B18FF1A3EB4CF0019BE1D /* icon@2x.png */,
-				DE2B18FD1A3EB43C0019BE1D /* icon_120x120.png */,
 				DE4355DB1A14E8D5004B1F82 /* img-menu-line@2x.png */,
 			);
 			name = Images;
@@ -374,20 +362,16 @@
 				DED402B21A124F240055830F /* Images.xcassets in Resources */,
 				DE3BA23C1A4325E200678EE6 /* caidantubiao@2x.png in Resources */,
 				DEAEAF791A384647005EBEC6 /* zhaobiaotongzhi.png in Resources */,
-				DEBC2C561A3893CD002D969C /* about.png in Resources */,
-				DEAEAF711A3819EB005EBEC6 /* logo.png in Resources */,
-				DE2B19001A3EB4CF0019BE1D /* icon@2x.png in Resources */,
 				DEAEAF731A381A7E005EBEC6 /* login_top.png in Resources */,
 				DEAEAF771A384590005EBEC6 /* zhaobiaoyaoqinghan.png in Resources */,
+				DE427BBA1A5C36E100595751 /* about.png in Resources */,
 				DE4355DC1A14E8D5004B1F82 /* img-menu-line@2x.png in Resources */,
 				DEAEAF7B1A3846DE005EBEC6 /* zhaobiaowenjuan.png in Resources */,
 				DED402A41A124F230055830F /* InfoPlist.strings in Resources */,
-				DE2B19021A3EB5180019BE1D /* icon.png in Resources */,
 				DEAEAF751A383626005EBEC6 /* login_bottom.png in Resources */,
-				DE2B18FE1A3EB43C0019BE1D /* icon_120x120.png in Resources */,
 				DED402AD1A124F240055830F /* Main.storyboard in Resources */,
 				DEAEAF7D1A384757005EBEC6 /* zhongbiaotongzhi.png in Resources */,
-				DEB4F5771A43006D00DF787A /* main_bg.png in Resources */,
+				DE7ED6E31A4D140A0028B10D /* main_bg.png in Resources */,
 				DE2B19041A3EBB790019BE1D /* title_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,6 +527,7 @@
 		DED402C91A124F240055830F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Lehui Home (Beijing) Technology Service Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lehui Home (Beijing) Technology Service Co., Ltd.";
@@ -555,7 +540,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2cf28acc-5811-4ac9-a8a4-937d3d17e12e";
+				PROVISIONING_PROFILE = "47a6c8ca-a56d-4dd0-8dfe-d6c62eaf3021";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -563,6 +548,7 @@
 		DED402CA1A124F240055830F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Lehui Home (Beijing) Technology Service Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lehui Home (Beijing) Technology Service Co., Ltd.";
@@ -575,7 +561,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2cf28acc-5811-4ac9-a8a4-937d3d17e12e";
+				PROVISIONING_PROFILE = "47a6c8ca-a56d-4dd0-8dfe-d6c62eaf3021";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
